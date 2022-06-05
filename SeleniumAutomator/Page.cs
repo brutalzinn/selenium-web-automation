@@ -8,23 +8,20 @@ namespace SeleniumAutomator
 {
     public class Page
     {
-        public Guid Id { get; set; }
-        public string Nome { get; set; }
-        public Func<Page, bool> CallBack { get; set; }
-        public LogTime LogTime { get; set; }
+        public Guid Id { get; private set; }
+        public string Nome { get; private set; }
+        private Func<Page, bool> CallBack { get; set; }
+
         public Page(string nome, Func<Page, bool> callBack)
         {
             Id = Guid.NewGuid();
-            LogTime = new LogTime();
             Nome = nome;
             CallBack = callBack;
         }
 
         public void Executar()
         {
-            LogTime.Iniciar();
             CallBack(this);
-            LogTime.Finalizar();
         }
     }
 }

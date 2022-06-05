@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace SeleniumAutomator
 {
-    public class LogTime
+    public static class LogTime
     {
-        public DateTime DateTimeIniciado { get; private set; }
-        public DateTime DateTimeFinalizado { get; private set; }
-        public TimeSpan TempoExecucao { get; private set; }
+        public static  DateTime DateTimeIniciado { get; private set; }
+        public static DateTime DateTimeFinalizado { get; private set; }
+        public static TimeSpan TempoExecucao { get; private set; }
 
-        public void Iniciar()
+        public static void Iniciar()
         {
             DateTimeIniciado = DateTime.Now;
         }
 
-        public void Finalizar()
+        public static void Finalizar()
         {
             DateTimeFinalizado = DateTime.Now;
             TempoExecucao = DateTimeFinalizado.Subtract(DateTimeIniciado);
         }
 
-        public void ToConsoleWriteLine(string label, object value, ConsoleColor color = ConsoleColor.White)
+        public static void ToConsole(this object value, string label, ConsoleColor color = ConsoleColor.White)
         {
             Console.ForegroundColor = color;
             Console.WriteLine("{0} {1} ", label, value);
