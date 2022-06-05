@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\gedeo\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\gedeo\\.nuget\\packages"
+    ]
+  }
+}
